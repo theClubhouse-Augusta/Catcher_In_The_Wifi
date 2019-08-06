@@ -27,16 +27,20 @@ const server = http.createServer(function (req, res) {
 			res.writeHead(200, {'content-Type': "text/css"});
 			res.end(content);
 		});
-	    } if (parUrl.pathname === ('/email/show')){
-			res.writeHead(200, { 'Content-Type': "application/json", "access-control-allow-origin": '*' });
+	    } 
+
+
+
+	 //    if (parUrl.pathname === ('/email/show')){
+		// 	res.writeHead(200, { 'Content-Type': "application/json", "access-control-allow-origin": '*' });
 		
-		// Veronica's team will make the db.js file???
-			db.getEmail().then( function(result){
-				res.write(result);
-				res.end();
-			}).catch(console.log)
+		// // Veronica's team will make the db.js file???
+		// 	db.getEmail().then( function(result){
+		// 		res.write(result);
+		// 		res.end();
+		// 	}).catch(console.log)
 		
-		}   
+		// }   
 
 	
 	})
