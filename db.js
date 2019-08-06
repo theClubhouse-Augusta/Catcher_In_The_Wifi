@@ -1,11 +1,12 @@
-var mysql = require('mysql');
+// var mysql = require('mysql');
 
-var connection = mysql.createConnection({
-    host: "localhost",
-    user: "root",
-    password: "password",
-    database: "Catcher_In_The_Wifi",
-});
+// var connection = mysql.createConnection({
+//     host: "localhost",
+//     user: "root",
+//     password: "password",
+//     database: "Catcher_In_The_Wifi",
+// });
+var connection = require("./connect")
 
 connection.connect(function(err) {
   if (err) throw err;
@@ -34,3 +35,6 @@ function insertCaughtData(email) {
 }
 getCaughtData();
 insertCaughtData();
+
+module.exports.getCaughtData=getCaughtData;
+module.exports.insertCaughtData = insertCaughtData;
