@@ -6,69 +6,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-    <!-- Favicon stuff -->
-    <link rel="apple-touch-icon" sizes="57x57" href="./favicon/apple-icon-57x57.png">
-    <link rel="apple-touch-icon" sizes="60x60" href="./favicon/apple-icon-60x60.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="./favicon/apple-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="./favicon/apple-icon-76x76.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="./favicon/apple-icon-114x114.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="./favicon/apple-icon-120x120.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="./favicon/apple-icon-144x144.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="./favicon/apple-icon-152x152.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="./favicon/apple-icon-180x180.png">
-    <link rel="icon" type="image/png" sizes="192x192"  href="./favicon/android-icon-192x192.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="./favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="96x96" href="./favicon/favicon-96x96.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="./favicon/favicon-16x16.png">
-    <link rel="manifest" href="./favicon/manifest.json">
-    <meta name="msapplication-TileColor" content="#ffffff">
-    <meta name="msapplication-TileImage" content="/favicon/ms-icon-144x144.png">
-    <meta name="theme-color" content="#ffffff">
+
 
     <!-- og meta tags  -->
-    <meta property="og:title" content="theClubhouse - Augusta">
-    <meta property="og:site_name" content="theClubhou.se">
-    <meta property="og:url" content="https://theclubhou.se">
-    <meta property="og:description" content="Innovation Center, Co-working, Code Boot Camp, Meetups, Events, Entrepreneurship, Incubator">
-    <meta property="og:type" content="article">
-    <meta property="og:image" content="https://theclubhou.se/images/theclubhouse.png">
 
-    <meta property="description" content="Innovation Center, Co-working, Code Boot Camp, Meetups, Events, Entrepreneurship, Incubator">
     <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet" href="style.css">
+    <script src="AJAX.js"></script>
     <title>theClubhouse Augusta</title>
-    <meta description="Augusta Innovation center " >
-    <script src="https://kit.fontawesome.com/0f6d99f3bd.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
-    <script src="main.js"></script>
 </head>
 <body>
     <main>
-        <h1>
-            <img src="theclubhouse.png" alt="theClubhou.se Augusta">
-        </h1>
-        <h2>Welcome to this event by <b>The Clubhou.se</b>! Please complete the input fields below and submit your entries.</h2>
-        <h3>Please select the type of event from below:</h3>
+        <h1><img src="theclubhouse.png" alt="theClubhou.se Augusta"></h1>
+        <h2>Welcome! Please sign in below.</h2>
+        <h3>Select the reason you are visiting:</h3>
         <select id="eventSelect">
-           <option value="checkIn">Check-In</option>
+           <option value="visitor">Visitor</option>
            <option value="foundersCircle">Founders' Circle</option>
            <option value="millionCups">One Million Cups</option>
            <option value="lunchAndLearn">Lunch & Learn</option>
         </select>
         <br> 
-        <h3>Please enter your email below:</h3>
+        <h3>Email:</h3>
         <input type="email" id="email"> 
         <br>  
-        <input type="submit" id="submit">
+        <button type="submit" id="submit" onclick="encode()">Submit</button>
     </main>
-    <footer>
-
-        <p>
-            theClubhou.se is a non-profit 501(c)3<br>
-            100 Grace Hopper Ln., Suite 3700, Augusta, GA 30901<br>
-            Inquire at <a href="mailto:heythere@theclubhou.se">heythere@theclubhou.se</a>  or call (706) 969-4602
-        </p>
-    </footer>
-    
 </body>
 </html>
