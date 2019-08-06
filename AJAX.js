@@ -10,7 +10,8 @@ function encode() {
    var xhttp = new XMLHttpRequest();
    xhttp.onreadystatechange = function() {
       if (this.readyState == 4 && this.status == 200) {
-         document.getElementById("eventSelect").value = this.responseText;
+         console.log(this.responseText);   
+         // document.getElementById("eventSelect").value = this.responseText;
       }
       var request = "/add?" + "&email=" + email + "&event=" + event;
       xhttp.open("GET", request, true);
