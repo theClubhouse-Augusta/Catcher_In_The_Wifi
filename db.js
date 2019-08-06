@@ -1,17 +1,9 @@
-// var mysql = require('mysql');
+var mysql = require('mysql'),
+    config  = require("./config.json"),
+    // email = "",
+    connection = mysql.createConnection(config.db);
 
-// var connection = mysql.createConnection({
-//     host: "localhost",
-//     user: "root",
-//     password: "password",
-//     database: "Catcher_In_The_Wifi",
-// });
-var connection = require("./connect")
 
-connection.connect(function(err) {
-  if (err) throw err;
-  console.log("Connected!");
-});
 
 function getCaughtData(){
     connection.connect(function(err) {
@@ -26,15 +18,15 @@ function getCaughtData(){
 function insertCaughtData(email) {
     connection.connect(function(err) {
         if (err) throw err;
-     var sql = "INSERT INTO caughtInfo (email) VALUES ('" +email+"')";
-     connection.query(sql, function(err, result) {
+        var sql = "INSERT INTO caughtInfo (email) VALUES ('" + email +"')";
+        connection.query(sql, function(err, result) {
          if (err) throw err;
          console.log("Email entered")
      })
     })
 }
-getCaughtData();
-insertCaughtData();
+// getCaughtData();
+// insertCaughtData(email);
 
-module.exports.getCaughtData=getCaughtData;
+module.exports.getCaughtData = getCaughtData;
 module.exports.insertCaughtData = insertCaughtData;
