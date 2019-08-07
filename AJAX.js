@@ -10,9 +10,10 @@ var res = this.responseText;
 console.log(JSON.parse(res));
 }
 };
-
-var email = encodeURIComponent(email);
-var event = encodeURIComponent(event);
+var emailRaw = document.getElementById("email").value;
+var eventRaw = document.getElementById("eventSelect").value;
+var email = encodeURIComponent(emailRaw);
+var event = encodeURIComponent(eventRaw);
 var request = "/add?" + "email=" + email + "&event=" + event;
    xhttp.open("GET",request, true);
    xhttp.send();
