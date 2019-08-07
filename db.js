@@ -25,7 +25,8 @@ connection.connect(function(err) {
 // function insertCaughtData(email) {
 //     connection.connect(function(err) {
 //         if (err) throw err;
-//      var sql = "INSERT INTO caughtInfo (email) VALUES ('" +email+"')";
+//      var sql = "INSERT INTO caughtInfo (email) VALUES ('" +email+"')
+//     //  var sql = "INSERT INTO caughtInfo (email) VALUES ('melva.squires@gmail.com')";
 //      connection.query(sql, function(err, result) {
 //          if (err) throw err;
 //          console.log("Email entered")
@@ -34,5 +35,5 @@ connection.connect(function(err) {
 // };
 
 // getCaughtData();
-// insertCaughtData(); 
+// // insertCaughtData(email); 
 
