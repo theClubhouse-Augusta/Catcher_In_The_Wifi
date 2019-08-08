@@ -1,11 +1,10 @@
-The http "request" is sent from the client side (browser) that is sent to the server.  There are several types of http request: 
+The http "request" method indiicates the method to be preformed on the resource identified by the given "Request-URI". The method is case sesitive and should be mentioned, the following are methods suported in HTTP/1.1:
 
-GET request is used to require data from the server. The query string name/value pairs is sent in a URL in a GET request.
-
+ 
+GET request untilizes the query string name/value pairs sent in a URL to comunicate with the server.
 
 example:
-        req.get()
-        req.get('Content-Type');
+
 var request = require('request');
 
 // Set the headers
@@ -30,12 +29,10 @@ request(options, function (error, response, body) {
     }
 })
 
-        
-       
-POST is used to send data to a server to create or update a resource.
-
-
-
+The next request is HEAD, the HEAD method is the same as the GET, but transfers the status line in the header section only. "example above"
+             
+The next request is POST:
+ A POST is used to send data to a server to create or update a resource.
 
 
 example of require:
@@ -44,3 +41,4 @@ const request = new Request('https://developer.mozilla.org/en-US/docs/Web/API/No
 const URL = request.url;
 const method = request.method;
 const credentials = request.credentials;
+
