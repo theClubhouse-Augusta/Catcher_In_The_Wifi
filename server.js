@@ -7,20 +7,38 @@ var server = http.createServer(function(req, res){
   
     var parUrl = url.parse(req.url, true);
     var pathname = '.';
-    res.writeHead(200, {"Content-Type": "application/json", "access-control-allow-origin": "*"});
     console.log('request was made: ' + req.url);
-
+    
     if (req.url === '/') {
         res.writeHead(200, {'Content-Type': 'text/html'});
-        fs.createReadStream(__dirname + '/index.html').pipe(res); 
-    }    
-    if (req.url === '/style.css'){
-        res.writeHead(200, {'Content-Type': 'text/html'});
-        fs.createReadStream(__dirname + '/style.css').pipe(res); 
+        var data = fs.readFileSync('./index.html');
+        res.write(data.toString())
+        res.end();
+    } else if (req.url === '/style.css'){
+        res.writeHead(200, {'Content-Type': 'text/css'});
+        var data = fs.readFileSync('./style.css');
+        res.end(data.toString()); 
+    } else if (req.url === '/reset.css'){
+        res.writeHead(200, {'Content-Type': 'text/css'});
+        var data = fs.readFileSync('./reset.css');
+        res.end(data.toString()); 
+    } 
+    else if (req.url === '/fonts/LeagueGothic-Regular.otf'){
+        res.writeHead(200, {'Content-Type': "font/opentype"});
+        var data = fs.readFileSync('./fonts/LeagueGothic-Regular.otf');
+        res.end(data); 
     }
-    if (req.url === '/reset.css'){
-        res.writeHead(200, {'Content-Type': 'text/html'});
-        fs.createReadStream(__dirname + '/reset.css').pipe(res); 
+    else if (req.url === '/theclubhouse.png'){
+        res.writeHead(200, {'Content-Type': "image/png"});
+        var data = fs.readFileSync('./theclubhouse.png');
+        res.end(data); 
+    }
+    else if (req.url === '/AJAX.js'){
+        res.writeHead(200, {'Content-Type': "text/plain"});
+        var data = fs.readFileSync('./AJAX.js');
+        res.end(data); 
+    } else {
+        res.end("victory is not mine");
     }
   
 });
