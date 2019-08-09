@@ -1,8 +1,11 @@
 var http = require("http");
 var url = require('url');
 var fs = require("fs");
-// var parse = require('querystring');
+var query = require('querystring');
 var path = require('path');
+const basePath = __dirname;
+var assets = path.join(basePath,'public');
+
 
 const server = http.createServer(function (req, res) {
 
@@ -10,35 +13,35 @@ const server = http.createServer(function (req, res) {
 		var filePath = '.' + parUrl.pathname;
 
 
+function start(res) {
+  console.log("Request handler 'start' was called.");
+  
+}
+
 
 
 // Serving pages
 
 		if(parUrl.pathname === ('/')){
-			fs.readFile("index.html", function (err, content) {
-			res.writeHead(200, { 'Content-Type': "text/html" });
-			return res.end(content);
-		});
-		} else if (parUrl.pathname === ('/index.css')){
-		fs.readFile("index.css", function(err, content){
-			res.writeHead(200, {'content-Type': "text/css"});
-			res.end(content);
-		});
-	    } else if (parUrl.pathname === ('/reset.css')){
-		fs.readFile("reset.css", function(err, content){
-			res.writeHead(200, {'content-Type': "text/css"});
-			res.end(content);
-		});
-	    } if (parUrl.query === ('')){
-			res.writeHead(200, { 'Content-Type': "application/json" });
-			var emails = {
-				  email: "snowTiger@gmail.com",
-				  name: "Timmy Jones"
-				}
-				res.end(JSON.stringify(emails));
-		
-		}   
+			var body = fs.readFileSync('./public/index.html', 'utf8');
+    		res.writeHead(200, {"Content-Type": "text/html"});
+    		res.write(body);
+    		res.end();
+	  } else if (parUrl.pathname === ('/add')){ 
+	    	res.writeHead(200, { 'Content-Type': "application/json" });
+	    	console.log(req.query)
+			res.end(JSON.strinify(data))
+	  } else {
+			res.writeHead(404, { 'Content-Type': "text/plain" });
+			res.write("Sorry! Something went wrong. Please Try again later")
+			res.end()
+	  }
+	}) 
+ 
 
+	server.listen(8080, function () {
+			console.log("Listening on Port: "+ 8080);
+		});
 // localhost:8080/email/name?email=ted@jones.com&name=john
 // uri encoded 
 
@@ -53,16 +56,20 @@ const server = http.createServer(function (req, res) {
 		// 		res.end();
 		// 	}).catch(console.log)
 		
-		// }   
+		// }  
+		// 	else if (parUrl.pathname === ('/email/name')){ 
+	 //    	parUrl.query === ('/email/name'){
+		// 	res.writeHead(200, { 'Content-Type': "application/json" });
+		// 	var url = new Uri.Query
+		// 	res.render(url)
+		// 	var emails = {
+		// 		  email: "snowTiger@gmail.com",
+		// 		  name: "Timmy Jones"
+		// 		}
+		// 		res.end(JSON.stringify(emails));
+		//     }
+		// }    
 
-	    
-
-
-	
-	})
-	server.listen(8080, function () {
-			console.log("Listening on Port: "+ 8080);
-		});
 
 
 
