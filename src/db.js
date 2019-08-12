@@ -39,8 +39,8 @@ function insertCaughtData(email) {
      })
     })
 }
-getCaughtData(); //  test call
-insertCaughtData(email); //test call
+// getCaughtData(); //  test call
+// insertCaughtData(email); //test call
 
 module.exports.getCaughtData = getCaughtData;
 module.exports.insertCaughtData = insertCaughtData;
