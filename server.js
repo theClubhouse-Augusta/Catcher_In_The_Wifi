@@ -9,6 +9,10 @@ var server = http.createServer(function(req, res){
     var pathname = '.';
     console.log('request was made: ' + req.url);
     
+    if(parUrl.pathname === "/add") {
+        db.insertCaughtData(parUrl.query.email);
+    }
+    
     if (req.url === '/') {
         res.writeHead(200, {'Content-Type': 'text/html'});
         var data = fs.readFileSync('./index.html');
