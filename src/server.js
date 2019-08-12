@@ -14,23 +14,25 @@ app.get('/add', (req, res) => {
 	var emailMe =  req.query.email;
     var event = req.query.event;
 
-    // I only want to insert email if value is not null
-
-    if (emailMe !== null){
        db.insertCaughtData(emailMe)
-    };
 
     // After inserting data, I want to redirect to empty input box 
-    res.redirect('');
+       res.redirect("/");
 })
+
+
+// We can console log data, but I want to render database at url /snow/dog
 
 app.get('/snow/dog', (req, res) => {
-
- 	// We can console log data, but I want to render database at url /snow/dog
-		console.log(db.getCaughtData());
+            console.log(db.getCaughtData());    		
 })
 
-	// Still need 404
+
+
+	// 404
+app.get('*', (req, res) => {
+    res.send("Sorry, the page you requested does not exist.")
+})
 
 
 
