@@ -1,0 +1,15 @@
+{
+  "name": "catcher_in_the_wifi-develop",
+  "version": "1.0.0",
+  "description": "",
+  "main": "AJAX.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "mocha"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "mocha": "^6.2.0"
+  }
+}
