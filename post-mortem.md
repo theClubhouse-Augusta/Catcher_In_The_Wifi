@@ -1,0 +1,3 @@
+#### post-mortem - Express Server :-(
+
+- From what I understand, the team decided to go with the vanilla-node server because it would cause the least amount of disruption with file structures that already exits on the develop branch. It is my opinion, however, that the Express server would allow the least amount of hassle and frustration if the client did decide in the future to make changes to the front-end files as there would be no need to change anything on the server.
